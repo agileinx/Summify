@@ -16,11 +16,15 @@ function scrapeContent(){
 
                 async function extractAndSendText() {
                     const allText = document.body.innerText;
+
+                   
             
                     //api request to summarize
             
                     const prompt = "Summarize this webpage in 300-500 words. Ignore headers, footers, ads, and other misc. junk. Just the main content of the page that makes sense when summarized: " + allText;
             
+                    console.log(prompt);
+
                     const data = {
                         model: 'gpt-3.5-turbo',
                         messages: [
@@ -52,9 +56,7 @@ function scrapeContent(){
                             chrome.runtime.sendMessage({ action: 'updatePopup', textContent: data.choices[0].message.content});
                             
                         })
-                        .catch (error => {
-                            chrome.runtime.sendMessage({ action: 'updatePopup', textContent: "Sorry, there was an error summarizing this page!"});
-                        })
+                       
             
                 }
         

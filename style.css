@@ -1,6 +1,11 @@
+* {
+    padding: 2px;
+    
+}
+
 body {
-    height: 97vh;
-    width: 95vw;
+    height: 450px;
+    width: 300px
 }
 
 #summarize-button {
@@ -15,5 +20,25 @@ body {
 
 #summarize-button:hover {
     background-color: rgb(50, 50, 50);
+}
+
+.header {
+    height: 40px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.logo {
+    vertical-align: middle;
+
+}
+.logo img {
+    max-width: 100px;
+    max-height: 100px;
+
 }
 
