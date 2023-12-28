@@ -1,0 +1,19 @@
+body {
+    height: 97vh;
+    width: 95vw;
+}
+
+#summarize-button {
+    padding: 10px 20px;
+    color: white;
+    background-color: rgb(50, 50, 50);
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: monospace;
+    font-weight: 800;
+}
+
+#summarize-button:hover {
+    background-color: rgb(50, 50, 50);
+}
+
