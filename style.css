@@ -22,6 +22,7 @@
 
 * {
     padding: 2px;
+    padding-top: 0px;
     background: rgb(243, 243, 243);
     
 }
@@ -88,7 +89,37 @@ body {
 
 #text:focus {
     outline: none;
-    
+}
 
+.webpage {
+    display: flex;
+    justify-content: left;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0;
+    margin-top: 10px;
+    align-items: center;
+    background-color: #FFD700;
+
+}
+
+.webpage img {
+    max-height: 15px;
+    max-width: 15px;
+    border-radius: 10px;
+    margin-left: 5px;
+    background-color: #FFD700;
+}
+
+.webpage p {
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: Poppins-Normal;
+    white-space: nowrap;
+    color: black;
+    margin-left: 5px;
+    background-color: #FFD700;
+    margin-right: 5px;
 }
 

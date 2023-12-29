@@ -1,6 +1,5 @@
 document.getElementById("summarizeBtn").addEventListener("click", getText);
 
-
 function getText() {
 
 
@@ -19,6 +18,8 @@ function getText() {
     });
 
 }
+
+
 
 //getting the WEB_URL
 chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {

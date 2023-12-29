@@ -7,6 +7,13 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponce) {
 
     if (parsedContent.id === "page-link"){
         document.getElementById('page-link').textContent = parsedContent.web_url;
+        
+        //getting hostname for favicon purposes
+        var parsedURL = new URL(parsedContent.web_url);
+        const hostname = parsedURL.hostname;
+
+        var favicon = document.getElementById("favicon-image");
+        favicon.src = "https://www.google.com/s2/u/0/favicons?domain=" + hostname;
     
     } else if (parsedContent.id === "text"){
         document.getElementById('text').textContent = parsedContent.responce;
@@ -15,3 +22,4 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponce) {
 
     
 })
+
