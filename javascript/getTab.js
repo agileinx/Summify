@@ -10,7 +10,7 @@ function getText() {
         //inject the script into the tab
         chrome.scripting.executeScript({
             target: { tabId: currentTabId },
-            files: ['scrapeContent.js']
+            files: ['javascript/scrapeContent.js']
         });
     
     
@@ -29,7 +29,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     //inject the script into the tab
     chrome.scripting.executeScript({
         target: { tabId: currentTabId },
-        files: ['grabWebURL.js']
+        files: ['javascript/grabWebURL.js']
     });
 
 })

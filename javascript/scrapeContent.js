@@ -1,6 +1,6 @@
 function scrapeContent(){
     (async () => {
-        const src = chrome.runtime.getURL('config.json');
+        const src = chrome.runtime.getURL('../config.json');
 
         fetch(src)
             .then(responce => {
@@ -21,8 +21,11 @@ function scrapeContent(){
             
                     //api request to summarize
             
-                    const prompt = "Summarize this webpage in 300-500 words. Ignore headers, footers, ads, and other misc. junk. Just the main content of the page that makes sense when summarized: " + allText;
+                    var prompt = "Summarize this webpage in 300-500 words. Ignore headers, footers, ads, and other misc. junk. Just the main content of the page that makes sense when summarized: " + allText;
 
+                    if (prompt.length > 15000){
+                        prompt = prompt.substring(0, 14999);
+                    }
 
                     const data = {
                         model: 'gpt-3.5-turbo',
