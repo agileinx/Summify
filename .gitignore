@@ -3,3 +3,4 @@ node_modules
 .env
 manifest.json
 Poppins
+.DS_Store

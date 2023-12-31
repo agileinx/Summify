@@ -65,6 +65,7 @@ body {
     color: white;
     border: none;
     font-family: Poppins-Semi-Bold;
+    cursor: pointer;
 
 }
 
@@ -121,5 +122,56 @@ body {
     margin-left: 5px;
     background-color: #E6E6FA;
     margin-right: 5px;
+}
+
+.settings-parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.length-parent {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.length-parent label {
+    margin-bottom: 1px;
+    font-family: Poppins-Semi-Bold;
+    font-size: 12px;
+}
+
+.length-parent select {
+    position: relative;
+    padding: 5px;
+    padding-right: 0px;
+    font-family: Poppins-Normal;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.summary-length-select option {
+    font-family: Poppins-Normal;
+}
+
+.summary-type-parent {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-type-parent label {
+    margin-bottom: 1px;
+    font-family: Poppins-Semi-Bold;
+    font-size: 12px;
+}
+
+.summary-type-parent select {
+    padding: 5px;
+    font-family: Poppins-Normal;
+    font-size: 12px;
+    border-radius: 5px;
 }
 
