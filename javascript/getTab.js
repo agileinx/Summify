@@ -1,10 +1,17 @@
 document.getElementById("summarizeBtn").addEventListener("click", getText);
+document.getElementById("copy-text-button").addEventListener("click", copyText);
 
 function getText() {
 
     var selectElement = document.getElementById('summary-length-select');
 
     var optionSelected = selectElement.options[selectElement.selectedIndex].text;
+
+    //initiate loading animation (GIF)
+    document.getElementById("loading-gif").style.display = 'block';
+
+    var summarizeBtnTxt = document.getElementById("button-text");
+    summarizeBtnTxt.style.display = "none";
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         //gets the current tabs id
@@ -35,14 +42,17 @@ function getText() {
                             async function extractAndSendText() {
                                 const allText = document.body.innerText;
                 
-                                console.log(allText);
+                                console.log(allText.substring(0, 14999));
 
                                 var prompt = "";
                         
                                 //api request to summarize
-                                if (optionSelected === "Snapshot (100-250 wds)"){
+                                console.log(optionSelected);
+                                if (optionSelected === "Snapshot (~ 100-250 wd)"){
+                                    console.log("briefly");
                                     prompt = "summarize this article BRIEFLY in 100 - 200 words: " + allText;
                                 } else {
+                                    console.log("detailed");
                                     prompt = "Summarize this webpage with GREAT DETAIL in EXACTLY 500 to 600 words. NO LESS THAN 500 WORDS. Ignore headers, footers, ads, and other misc. junk. Just the main content of the page that makes sense when summarized: " + allText;
                                 }
                                 
@@ -81,7 +91,8 @@ function getText() {
                 
                                         const id = "text";
                                         const responce = data.choices[0].message.content;
-                
+                                        console.log(data);
+
                                         var requestData = {
                                             responce,
                                             id
@@ -126,3 +137,14 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     });
 
 })
+
+function copyText() {
+
+    var text = document.getElementById("text");
+    
+    text.setSelectionRange(0, 15000);
+
+    navigator.clipboard.writeText(text.textContent);
+
+
+}

@@ -31,10 +31,21 @@
         </div>
     </div>
 
-    <textarea id="text" placeholder="Your summary will appear here!" readonly></textarea>
+    <div class="summary-parent">
+        <textarea id="text" placeholder="Your summary will appear here!" readonly></textarea>
+        <div class="summary-details">
+            <p id="word-count-label">0 words</p>
+            <button id="copy-text-button"><img src="images/copy_icon.png" alt="Copy Icon"></button>
+        </div>
+    </div>
+
+
     <script src="javascript/popup.js"></script>
 
-    <button id="summarizeBtn">Summarize</button>
+    <button id="summarizeBtn" value="Summarize">
+        <p id="button-text">Summarize</p>
+        <img id="loading-gif" src="images/loading.gif" alt="loading">
+    </button>
     <script src="javascript/getTab.js"></script>
 
 

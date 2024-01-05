@@ -21,7 +21,30 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponce) {
         webpage[0].style.display = 'flex';
 
     } else if (parsedContent.id === "text"){
+       
         document.getElementById('text').textContent = parsedContent.responce;
+
+         //uninitiate loading animation (GIF)
+        document.getElementById("loading-gif").style.display = 'none';
+
+        var summarizeBtnTxt = document.getElementById("button-text");
+        summarizeBtnTxt.style.display = "block";
+
+        //updating word count of text box
+        var text = document.getElementById('text').textContent;
+
+        var wordCount = 0;
+
+        for (i = 0; i < text.length; i++){
+            
+            if (text[i] == " "){
+                wordCount++;
+            }
+        }
+
+        wordCount++;
+
+        document.getElementById("word-count-label").innerHTML = wordCount + " Words";
 
     }
 
