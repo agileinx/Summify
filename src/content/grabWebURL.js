@@ -7,4 +7,5 @@ var content = {
     id
 }
 
+
 chrome.runtime.sendMessage({ action: 'updatePopup', textContent: JSON.stringify(content) });

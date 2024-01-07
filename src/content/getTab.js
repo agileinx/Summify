@@ -25,7 +25,8 @@ function getText() {
 
                 async function scrapeContent() {
     
-                    const src = chrome.runtime.getURL('../config.json');
+                    const src = chrome.runtime.getURL('src/content/config.json');
+                    console.log(src);
                             
                     await fetch(src)
                         .then(responce => {
@@ -133,7 +134,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     //inject the script into the tab
     chrome.scripting.executeScript({
         target: { tabId: currentTabId },
-        files: ['javascript/grabWebURL.js']
+        files: ['src/content/grabWebURL.js']
     });
 
 })

@@ -7,7 +7,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponce) {
 
     if (parsedContent.id === "page-link"){
         
-        
         document.getElementById('page-link').textContent = parsedContent.web_url;
         
         //getting hostname for favicon purposes
