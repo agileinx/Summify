@@ -1,6 +1,6 @@
-config.json
+src/content/config.json
 node_modules
 .env
 manifest.json
-Poppins
+src/popup/Poppins
 .DS_Store
